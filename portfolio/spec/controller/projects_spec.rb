@@ -5,15 +5,15 @@ RSpec.describe ProjectsController, type: :controller do
     it "returns a success response" do
       get :index
       # expect(response.success).to eq(true)
-      expect(response).to be_success
+      expect(response).to have_http_status(200)
     end
   end
 
   context "GET #show" do
-    let!(:projects) { Projects.create(title: "Test title", description: "Test description") }
+    let!(:project) { Projects.create(title: "Test title", description: "Test description") }
     it "returns a success response" do
-      get :show, params: { id: projects }
-      expect(response).to be_success
+      get :show, params: { id: project }
+      expect(response).to have_http_status(200)
     end
   end
 end
