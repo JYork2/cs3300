@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-    @project = Projects.new
+    @projects = Projects.new
   end
 
   # GET /projects/1/edit
@@ -21,15 +21,15 @@ class ProjectsController < ApplicationController
 
   # POST /projects or /projects.json
   def create
-    @project = Projects.new(project_params)
+    @projects = Projects.new(project_params)
 
     respond_to do |format|
-      if @project.save
-        format.html { redirect_to project_url(@project), notice: "Projects was successfully created." }
-        format.json { render :show, status: :created, location: @project }
+      if @projects.save
+        format.html { redirect_to project_url(@projects), notice: "Projects was successfully created." }
+        format.json { render :show, status: :created, location: @projects }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+        format.json { render json: @projects.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -37,19 +37,19 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1 or /projects/1.json
   def update
     respond_to do |format|
-      if @project.update(project_params)
-        format.html { redirect_to project_url(@project), notice: "Projects was successfully updated." }
-        format.json { render :show, status: :ok, location: @project }
+      if @projects.update(project_params)
+        format.html { redirect_to project_url(@projects), notice: "Projects was successfully updated." }
+        format.json { render :show, status: :ok, location: @projects }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+        format.json { render json: @projects.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /projects/1 or /projects/1.json
   def destroy
-    @project.destroy
+    @projects.destroy
 
     respond_to do |format|
       format.html { redirect_to projects_index_url, notice: "Projects was successfully destroyed." }
@@ -60,7 +60,7 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Projects.find(params[:id])
+      @projects = Projects.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
