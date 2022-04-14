@@ -65,7 +65,7 @@ Rails.application.configure do
 
 
 
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
 
   #user_signed_in?
 
