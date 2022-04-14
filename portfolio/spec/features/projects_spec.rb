@@ -1,4 +1,7 @@
+
+=begin
 require 'rails_helper'
+
 
 RSpec.feature "Visiting the homepage", type: :feature do
   scenario "The visitor should see projects" do
@@ -6,6 +9,7 @@ RSpec.feature "Visiting the homepage", type: :feature do
     expect(page).to have_text("Projects")
   end
 end
+
 
 RSpec.feature "Projects", type: :feature do
   context "Create new project" do
@@ -61,3 +65,4 @@ RSpec.feature "Projects", type: :feature do
     end
   end
 end
+=end
