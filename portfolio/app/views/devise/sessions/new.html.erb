@@ -1,4 +1,7 @@
+<div class="text-center cover-container d-flex h-100 p-3 mx-auto flex-column">
+<main role="main" class="inner cover">
 <h2>Log in</h2>
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -24,3 +27,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</main>
+</div>

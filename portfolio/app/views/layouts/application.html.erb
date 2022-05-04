@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>Portfolio</title>
@@ -12,7 +13,22 @@
     <p class="alert"><%= alert %></p>
   </head>
 
-  <body>
-    <%= yield %>
+  <body style = "background-color: #FFFFFF">
+    
+    <div class="navbar navbar-dark fixed-top bg-dark text-center mx-auto">
+      <% if user_signed_in? %>
+        <%= button_to "Sign Out", destroy_user_session_path, method: :delete, :style => "background-color: darkgrey; border-radius: 8px"%>
+      <% else %>
+        <%= button_to "Sign In", new_user_session_path, method: :get, :style => "background-color: darkgrey; border-radius: 9px"%>
+      <%end%>
+      <%= button_to "Main", projects_path, method: :get, :style => "background-color: darkgrey; border-radius: 10px"%>
+    </div>
+      
+
+
+
+
+
+    <%=yield %>
   </body>
 </html>
