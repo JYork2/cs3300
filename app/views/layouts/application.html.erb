@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
+
 <html>
   <head>
-    <title>Portfolio</title>
+    <title class="font-weight-bold">Portfolio</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,18 +14,56 @@
     <p class="alert"><%= alert %></p>
   </head>
 
-  <body style = "background-color: #FFFFFF">
-    
-    <div class="navbar navbar-dark fixed-top bg-dark text-center mx-auto">
+  <body style = "background-color: #0275d8">
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand text-gradient-primary" href="#">York Portfolio</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <%if user_signed_in?%>
+        <li class="nav-item active">
+          <div class="btn btn-outline-primary ml-3">
+            <%= button_to "Sign Out", destroy_user_session_path, method: :delete, :class => "btn text-light btn-sm" %> 
+          </div> 
+        </li>
+        <li class="nav-item active">
+          <div class="btn btn-outline-primary ml-3">
+            <%= button_to "Create New Project", new_project_path, method: :get, :class => "btn text-light btn-sm"%>
+          </div> 
+        </li>
+      <% else %>
+        <li class="nav-item active">
+          <div class="btn btn-outline-primary ml-3">
+            <%= button_to "Sign In", new_user_session_path, method: :get, :class => "btn text-light btn-sm" %>
+          </div> 
+        </li>
+      <%end%>
+        <li class="nav-item active">
+          <div class="btn btn-outline-primary ml-3">
+            <%= button_to "Main", projects_path, method: :get, :class => "btn text-light btn-sm" %>
+          </div> 
+        </li>
+  </div>
+</nav>
+
+
+    <!--
+    <div class="navbar navbar-dark fixed-top bg-dark d-flex justify-content-between">
       <% if user_signed_in? %>
         <%= button_to "Sign Out", destroy_user_session_path, method: :delete, :style => "background-color: darkgrey; border-radius: 8px"%>
+        <%= button_to "Create New Project", new_project_path, method: :get, :style => "background-color: darkgrey; border-radius: 8px"%>
       <% else %>
-        <%= button_to "Sign In", new_user_session_path, method: :get, :style => "background-color: darkgrey; border-radius: 9px"%>
+        <%= button_to "Sign In", new_user_session_path, method: :get, :style => "background-color: darkgrey; border-radius: 8px"%>
       <%end%>
-      <%= button_to "Main", projects_path, method: :get, :style => "background-color: darkgrey; border-radius: 10px"%>
+      <%= button_to "Main", projects_path, method: :get, :style => "background-color: darkgrey; border-radius: 8px"%>
     </div>
       
-
+    -->
 
 
 

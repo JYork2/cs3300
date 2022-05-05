@@ -1,16 +1,24 @@
+<div class="text-center cover-container d-flex h-100 p-3 mx-auto flex-column">
+<main role="main" class="inner cover">
+
+
+<div class ="jumbotron container bg-secondary">
+<p style="color: grey"><%= notice %></p>
+
+
+  <h4 class=" containerw-50 h-75 font-weight-bold justify-content-center"><%= render @project %></h4>
 
 
 
-<div class ="jumbotron container">
-<p style="color: green"><%= notice %></p>
 
-<%= render @project %>
 
-<div>
-  <%= link_to "Edit this project", edit_project_path(@project) %> |
-  <%= link_to "Back to projects", projects_path %>
-
-  <%= button_to "Destroy this project", @project, method: :delete %>
+<div class="container row justify-content-center">
+  <div class="btn btn-outline-primary ml-3"><%= button_to "Edit this project", edit_project_path, method: :get, :class => "btn text-light btn-sm" %></div> 
+  
+  <div class="btn btn-outline-primary ml-3"><%= button_to "Destroy this project", @project, method: :delete, :class => "btn text-light btn-sm"  %></div> 
+</div>
 </div>
 
 </div>
+</main>
+

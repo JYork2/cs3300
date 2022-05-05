@@ -1,17 +1,27 @@
+<div class="text-center cover-container d-flex h-100 p-3 mx-auto flex-column mr-3">
+<main role="main" class="inner cover">
 
-<div class ="jumbotron container">
+
 <p style="color: green"><%= notice %></p>
 
 <h1>Projects</h1>
-<div>
+
 <div id="projects">
+ <div class="album py-5 bg-light mx-auto flex-row container row">
   <% @projects.each do |project| %>
+    <div class="col-md-4 box-shadow">
     <%= render project %>
     <p>
-      <%= link_to "Show this project", project %>
+      <div class="btn btn-outline-primary ml-3">
+        <%= button_to "Show this project", project, method: :get, :class => "btn text-light btn-sm" %>
+      </div> 
     </p>
+    </div>
   <% end %>
+  </div>
 </div>
-
-<%= link_to "New project", new_project_path %>
+<%= button_to "Create New Project", new_project_path, method: :get, :style => "background-color: darkgrey; border-radius: 10px"%>
+<!--<%= link_to "New project", new_project_path %> -->
+</div>
+</main>
 
