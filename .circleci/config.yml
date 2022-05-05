@@ -18,7 +18,7 @@ jobs:
     steps:
       - run: 
           name: haha
-          command: cd portfolio
+          command: cd ..
       - checkout
       - heroku/install
       - heroku/deploy-via-git
