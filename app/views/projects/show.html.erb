@@ -6,18 +6,19 @@
 <p style="color: grey"><%= notice %></p>
 
 
-  <h4 class=" containerw-50 h-75 font-weight-bold justify-content-center"><%= render @project %></h4>
+  <h4 class=" container w-50 h-75 font-weight-bold justify-content-center"><%= render @project %></h4>
 
 
 
 
-
+<%if user_signed_in?%>
 <div class="container row justify-content-center">
   <div class="btn btn-outline-primary ml-3"><%= button_to "Edit this project", edit_project_path, method: :get, :class => "btn text-light btn-sm" %></div> 
   
   <div class="btn btn-outline-primary ml-3"><%= button_to "Destroy this project", @project, method: :delete, :class => "btn text-light btn-sm"  %></div> 
 </div>
 </div>
+<%end%>
 
 </div>
 </main>

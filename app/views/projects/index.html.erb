@@ -6,8 +6,27 @@
 
 <h1>Projects</h1>
 
+<!--      Failed cooler index code
 <div id="projects">
- <div class="album py-5 bg-light mx-auto flex-row container row">
+  <div class="album py-5 bg-secondary">
+    <div class="container">
+      <%@projects.each do |project|%>
+        <div class = "col-md-4">
+          <%render project%>
+          <h4 class = "card mb-4 box-shadow"></h4>
+          
+          <div class="btn btn-outline-primary ml-3">
+            <%= button_to "Show this project", project, method: :get, :class => "btn text-light btn-sm" %>
+          </div> 
+        </div>
+      <%end%>
+    </div>
+  </div>
+</div>
+-->
+
+<div id="projects">
+ <div class="container row border border-dark rounded rounded-3 w-75 py-5 bg-secondary mx-auto flex-row"> 
   <% @projects.each do |project| %>
     <div class="col-md-4 box-shadow">
     <%= render project %>
@@ -20,7 +39,10 @@
   <% end %>
   </div>
 </div>
+
+<!--
 <%= button_to "Create New Project", new_project_path, method: :get, :style => "background-color: darkgrey; border-radius: 10px"%>
+-->
 <!--<%= link_to "New project", new_project_path %> -->
 </div>
 </main>
