@@ -16,6 +16,9 @@ jobs:
   deploy:
     executor: heroku/default
     steps:
+      - run: 
+        name: haha
+        command: cd portfolio
       - checkout
       - heroku/install
       - heroku/deploy-via-git
